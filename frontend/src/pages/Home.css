@@ -1,0 +1,105 @@
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1400&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 72px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 36px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: #c0392b;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: #a93226; }
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 72px 80px;
+  gap: 48px;
+  background: #fff;
+}
+
+.feature {
+  text-align: center;
+}
+.feature span { font-size: 36px; }
+.feature h3 { font-size: 18px; font-weight: 600; margin: 16px 0 8px; color: #111; }
+.feature p { font-size: 14px; color: #666; line-height: 1.7; }
+
+.cta-banner {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 72px 40px;
+}
+.cta-banner h2 { font-size: 32px; font-weight: 600; margin-bottom: 12px; }
+.cta-banner p { color: #aaa; font-size: 16px; margin-bottom: 32px; }
+
+.info-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+.info-box {
+  padding: 48px 32px;
+  text-align: center;
+  border-right: 1px solid #eee;
+}
+.info-box:last-child { border-right: none; }
+.info-box h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 12px; }
+.info-box p { font-size: 15px; color: #333; line-height: 1.7; }
+
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 42px; }
+  .features { grid-template-columns: 1fr; padding: 48px 24px; }
+  .info-strip { grid-template-columns: 1fr; }
+  .info-box { border-right: none; border-bottom: 1px solid #eee; }
+}
