@@ -1,58 +1,42 @@
-.footer {
-  background: #111;
-  color: #aaa;
-}
+:root { --primary: #e8730a; }
+
+.footer { background: #0f0f0f; color: #aaa; border-top: 2px solid var(--primary); }
 
 .footer-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 48px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 56px 40px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px; max-width: 1200px; margin: 0 auto; padding: 56px 40px;
 }
 
 .footer-logo {
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
-  display: block;
-  margin-bottom: 12px;
+  font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 14px;
 }
-.footer-brand p { font-size: 14px; line-height: 1.7; color: #888; }
+.footer-logo span { color: var(--primary); }
 
-.footer-links h4,
-.footer-contact h4 {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #fff;
-  margin-bottom: 16px;
+.footer-brand p { font-size: 13px; line-height: 1.8; color: #777; margin-bottom: 16px; }
+
+.footer-contact-inline { display: flex; flex-direction: column; gap: 6px; }
+.footer-contact-inline span { font-size: 13px; color: #666; }
+
+.footer-links h4, .footer-info h4, .footer-delivery h4 {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--primary); font-weight: 700; margin-bottom: 16px;
 }
 
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.footer-links a {
-  color: #888;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.2s;
-}
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { color: #777; text-decoration: none; font-size: 14px; transition: color 0.2s; }
 .footer-links a:hover { color: #fff; }
 
-.footer-contact p { font-size: 14px; color: #888; margin-bottom: 6px; }
+.footer-info p, .footer-delivery p { font-size: 13px; color: #777; margin-bottom: 8px; line-height: 1.6; }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
-  padding: 20px;
-  font-size: 13px;
-  color: #555;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center; padding: 20px; font-size: 13px; color: #555;
 }
+.footer-bottom span { color: var(--primary); font-weight: 700; }
 
+@media (max-width: 1024px) {
+  .footer-content { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 640px) {
-  .footer-content { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
+  .footer-content { grid-template-columns: 1fr; gap: 28px; padding: 40px 24px; }
 }

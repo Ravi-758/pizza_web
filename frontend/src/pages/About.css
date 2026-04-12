@@ -1,39 +1,140 @@
-.about-page { padding-top: 64px; min-height: 100vh; background: #fff; }
+:root { --primary: #e8730a; --primary-dark: #c5600a; }
+
+.about-page { padding-top: 68px; min-height: 100vh; background: #fff; }
 
 .about-hero {
-  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
-    url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1400&q=80') center/cover no-repeat;
-  text-align: center;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a0a00 100%);
   padding: 100px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.about-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(232,115,10,0.12) 0%, transparent 70%);
+}
+
+.about-hero-content { position: relative; z-index: 1; }
+
+.about-tag {
+  display: inline-block;
+  background: rgba(232,115,10,0.15);
+  border: 1px solid rgba(232,115,10,0.3);
+  color: var(--primary);
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.about-hero h1 {
+  font-size: 52px;
+  font-weight: 900;
   color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.2;
 }
-.about-hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 12px; }
-.about-hero p { font-size: 18px; color: rgba(255,255,255,0.8); }
+.about-hero h1 span { color: var(--primary); }
+.about-hero p { color: rgba(255,255,255,0.6); font-size: 16px; }
 
-.about-content { max-width: 900px; margin: 0 auto; padding: 72px 24px; }
-
-.about-text-block { margin-bottom: 64px; }
-.about-text-block h2 { font-size: 28px; font-weight: 700; color: #111; margin-bottom: 20px; }
-.about-text-block p { font-size: 16px; color: #555; line-height: 1.9; margin-bottom: 16px; }
-
-.about-values {
+/* Story */
+.about-story {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  padding: 80px;
+  align-items: center;
+  background: #fff;
 }
 
-.value-card {
+.story-text h2 { font-size: 30px; font-weight: 800; color: #111; margin-bottom: 20px; }
+.story-text p { font-size: 15px; color: #666; line-height: 1.9; margin-bottom: 16px; }
+
+.story-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.story-stat {
   background: #f9f9f9;
   border-radius: 12px;
-  padding: 32px 24px;
+  padding: 24px;
   text-align: center;
   border: 1px solid #eee;
 }
-.value-card span { font-size: 36px; }
-.value-card h3 { font-size: 16px; font-weight: 600; color: #111; margin: 14px 0 8px; }
-.value-card p { font-size: 14px; color: #666; line-height: 1.7; }
+.story-stat span { font-size: 28px; font-weight: 900; color: var(--primary); display: block; margin-bottom: 6px; }
+.story-stat p { font-size: 13px; color: #888; margin: 0; }
 
-@media (max-width: 640px) {
-  .about-values { grid-template-columns: 1fr; }
-  .about-hero h1 { font-size: 36px; }
+/* Values */
+.about-values {
+  padding: 80px;
+  background: #f9f9f9;
+  text-align: center;
+}
+.about-values h2 { font-size: 32px; font-weight: 900; color: #111; margin-bottom: 40px; }
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.value-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 24px;
+  text-align: center;
+  border: 1px solid #eee;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.value-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.value-card span { font-size: 36px; display: block; margin-bottom: 14px; }
+.value-card h3 { font-size: 16px; font-weight: 700; color: #111; margin-bottom: 8px; }
+.value-card p { font-size: 13px; color: #777; line-height: 1.7; }
+
+/* Visit */
+.about-team {
+  padding: 80px;
+  background: #fff;
+  text-align: center;
+}
+.about-team h2 { font-size: 32px; font-weight: 900; color: #111; margin-bottom: 40px; }
+
+.visit-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.visit-card {
+  background: #f9f9f9;
+  border-radius: 14px;
+  padding: 32px 24px;
+  border: 1px solid #eee;
+}
+.visit-card span { font-size: 32px; display: block; margin-bottom: 12px; }
+.visit-card h3 { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 10px; }
+.visit-card p { font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
+
+@media (max-width: 768px) {
+  .about-story { grid-template-columns: 1fr; padding: 48px 24px; }
+  .about-values { padding: 48px 24px; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .about-team { padding: 48px 24px; }
+  .visit-info { grid-template-columns: 1fr; }
+  .about-hero h1 { font-size: 34px; }
+}
+@media (max-width: 480px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .story-stats { grid-template-columns: 1fr 1fr; }
 }
